@@ -1,0 +1,17 @@
+version: "3.4"
+services:
+  masternode:
+    image: tomochain/node:stable
+    environment:
+      IDENTITY: $NODENAME
+      PRIVATE_KEY: $PRIVATE_KEY
+      BOOTNODES: $BOOTNODES
+      NETSTATS_HOST: $WS_STATS_ENDPOINT
+      NETSTATS_PORT: $WS_STATS_PORT
+      WS_SECRET: $WS_STATS_SECRET
+    ports:
+      - 30303:30303
+      - 30303:30303/udp
+    volumes:
+      - chaindata:$DATADIR
+    restart: on-failure

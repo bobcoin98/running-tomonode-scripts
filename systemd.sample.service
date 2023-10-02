@@ -1,0 +1,17 @@
+[Unit]
+Description=Tomochain MasterNode service
+After=network-online.target
+Requires=network-online.target
+
+[Service]
+Type=forking
+WorkingDirectory=DATADIR
+ExecStart=DATADIR/runTomoMasternode.sh
+LimitAS=infinity
+LimitRSS=infinity
+LimitCORE=infinity
+LimitNOFILE=6553600
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
