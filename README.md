@@ -1,5 +1,6 @@
 # Run TomoChain full node
 
+## ⚙️ Configuration
 - Update environment variable in .env
 ```bash
 cp .env.sample.mainnet .env
@@ -7,6 +8,7 @@ cp .env.sample.mainnet .env
 
 There are 2 options: using binary or docker
 
+## Getting started 
 ### Using tomo binary (run in systemd)
 
 - Run this script 
@@ -14,7 +16,7 @@ There are 2 options: using binary or docker
 bash runTomoMasternode.sh
 ```
 
-### Using docker
+### 🐳 Using docker
 
 - Run 
 ```bash
@@ -42,6 +44,12 @@ tar tomox_chain_data.tar.gz -xvf -C $DATADIR/
 - Restart tomo node
 
 
-## Load Balancing
+## ⚖ Load Balancing
 
 We can run multiple nodes independently but using same coinbase address
+
+## ⚠️ Important note
+
+Coinbase address is used to sign block and system transactions. Please create a new address to run a node, DONOT use existing address which have fund
+
+We advise for security measures to use a fresh new account for your Masternode or 'coinbase address'. This is not the account that will receive the rewards. The rewards are sent to the account that will make the 50,000 TOMO initial deposit.
